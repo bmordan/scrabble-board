@@ -1,0 +1,29 @@
+{
+  "name": "scrabble-board",
+  "version": "0.0.1",
+  "description": "Query a standard scrabble board. Based on the 200 J.W.Spear & Sons PLC board.",
+  "main": "lib/board.js",
+  "scripts": {
+    "start": "node lib/board.js",
+    "test": "node test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bmordan/scrabble-board.git"
+  },
+  "keywords": [
+    "scrabble",
+    "scoring",
+    "board"
+  ],
+  "author": "bmordan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bmordan/scrabble-board/issues"
+  },
+  "homepage": "https://github.com/bmordan/scrabble-board",
+  "devDependencies": {
+    "tap-colorize": "^1.2.0",
+    "tape": "^4.0.0"
+  }
+}
