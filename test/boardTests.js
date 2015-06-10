@@ -25,16 +25,27 @@ test('Calling with one param will return that row', function (t) {
   t.end()
 })
 test('An error is thrown if you pass in in correct params', function (t) {
-  t.plan(3)
-  t.throws(function () {board('1','1')}, 'can\'t pass in strings')
+  t.plan(2)
   t.throws(function () {board(1,20)}, 'or references beyond the board')
   t.throws(function () {board(-1,20)}, 'or negative numbers')
   t.end()
 })
 test('Correct number of bonues squares on each row', function (t) {
   t.plan(1)
-  var bonusSquares = [ 5, 4, 4, 5, 2, 4, 4, 4, 4, 4, 2, 5, 4, 4, 5 ]
+  var bonusSquares = [ 5, 4, 4, 5, 2, 4, 4, 5, 4, 4, 2, 5, 4, 4, 5 ]
   t.same(allBonusSquares(),bonusSquares, 'different rows have different bonus squares')
+  t.end()
+})
+test('The Board\'s private state is protected', function (t) {
+  t.plan(2)
+  t.same(board(0,0),  { LS:1, WS:3 }, 'before altered board state')
+  board(0,0).WS = 1
+  t.same(board(0,0),  { LS:1, WS:3 }, 'after altered board state')
+  t.end()
+})
+test('Validates against floats', function (t) {
+  t.plan(1)
+  t.throws(function () {board(1.3,9)}, 'deals with decimals')
   t.end()
 })
 function bonuses (row) {

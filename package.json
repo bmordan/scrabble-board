@@ -26,5 +26,8 @@
     "standard": "^4.0.1",
     "tap-colorize": "^1.2.0",
     "tape": "^4.0.0"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
   }
 }
